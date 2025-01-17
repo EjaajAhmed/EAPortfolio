@@ -1,7 +1,1 @@
-{
-    "version": 2,
-    "static": {
-      "directory": "."
-    }
-  }
-  
+{ "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
