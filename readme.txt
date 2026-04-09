@@ -10,6 +10,25 @@ Portfolio Detailing my experiences, projects, and achievements.
 
 
 
-Shoutout to Styleshout's Epitome
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Shoutout to Epitome
 
 
