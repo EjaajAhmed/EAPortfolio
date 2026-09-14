@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/projects.css">
 
     <!-- script
     ================================================== -->
@@ -195,6 +196,21 @@
                         <div class="timeline__block">
                             <div class="timeline__bullet"></div>
                             <div class="timeline__header">
+                                <p class="timeline__timeframe">April 2026 - June 2026</p>
+                                <h3 class="item-title">Community of Guardians</h3>
+                                <h5>Software Engineering Intern</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <p>Fixed a critical mobile bug affecting all users by tracing a structural React rendering
+                                    issue across seven components, shipping the fix with zero desktop regressions. Shipped five
+                                    mobile UI features across onboarding, social feed and profile pages, keeping CI green on
+                                    every pull request to a shared TypeScript monorepo.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline__block">
+                            <div class="timeline__bullet"></div>
+                            <div class="timeline__header">
                                 <p class="timeline__timeframe">Jan 2026 - March 2026</p>
                                 <h3 class="item-title">Hatchloom</h3>
                                 <h5>Full Stack Developer</h5>
@@ -301,144 +317,86 @@
             <div class="column large-full">
                 <h2 class="section-heading section-heading--centerbottom">Selected Projects</h2>
                 <p class="section-desc">
-                    Here are some of my selected projects I have done lately. Feel free to 
-                    check them out.
+                    An index of things I've built. Hover a row to preview it, click to open.
                 </p>
             </div>
         </div> <!-- end heading-block -->
 
-        <div class="masonry-wrap">
+        <div class="pindex">
 
-            <div class="masonry">
-                <div class="grid-sizer"></div>
-    
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/DSALogo.jpg" class="thumb-link" title="Shutterbug" data-size="1050x700">
-                                <img src="images/portfolio/DSALogo.jpg" 
-                                     srcset="images/portfolio/DSALogo.jpg 1x, images/portfolio/DSALogo.jpg 2x" alt="">
-                            </a>    
-                            <a href="https://marketplace.visualstudio.com/items?itemName=DevarshiPatel03.dsasnippets" class="item-folio__project-link" title="Project link" target="_blank"></a>
-                        </div>
-    
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                DSA Code Snippets
-                            </h4>
-                            <p class="item-folio__cat">
-                                JavaScript
-                            </p>
-                        </div>
-    
-                        <div class="item-folio__caption">
-                            <p>A VSCode extension with over 1100 downloads that provides users with more than 
-                                40 code snippets.</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-    
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/FalseLeaders.jpg" class="thumb-link" title="FalseLeaders" data-size="1050x700">
-                                <img src="images/portfolio/FalseLeaders.jpg" 
-                                     srcset="images/portfolio/FalseLeaders.jpg 1x, images/portfolio/FalseLeaders.jpg 2x" alt="FalseLeaders homepage">
-                            </a>
-                            <a href="https://falseleaders.com" class="item-folio__project-link" title="Project link" target="_blank"></a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                FalseLeaders
-                            </h4>
-                            <p class="item-folio__cat">
-                                TypeScript, React, Fastify, PostgreSQL, Redis
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                            <p>A platform for rating and investigating people in power, scoring Canadian MPs on controversies, funding and voting record. Backed by a 12-module Fastify and PostgreSQL API with JWT authentication, Redis caching and a configurable scoring engine with an LLM news-article analyzer.</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
+            <a class="pindex__row" href="https://falseleaders.com" target="_blank" rel="noopener" data-preview="images/portfolio/FalseLeaders.jpg" data-aos="fade-up">
+                <img class="pindex__thumb" src="images/portfolio/FalseLeaders.jpg" alt="FalseLeaders preview" loading="lazy">
+                <span class="pindex__num">01</span>
+                <h3 class="pindex__title">FalseLeaders</h3>
+                <div class="pindex__meta">
+                    <ul class="pindex__tags"><li>TypeScript</li><li>React</li><li>Fastify</li><li>PostgreSQL</li><li>Redis</li></ul>
+                    <p class="pindex__desc">A civic platform that scores Canadian MPs on controversies, funding and voting record. Twelve-module Fastify API with JWT auth, Redis caching and an LLM news analyzer.</p>
+                </div>
+                <span class="pindex__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+            </a>
 
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/DidTheyHockey.jpg" class="thumb-link" title="DidTheyHockey" data-size="1050x700">
-                                <img src="images/portfolio/DidTheyHockey.jpg" 
-                                     srcset="images/portfolio/DidTheyHockey.jpg 1x, images/portfolio/DidTheyHockey.jpg 2x" alt="DidTheyHockey homepage">
-                            </a>
-                            <a href="https://didtheyhockey.com" class="item-folio__project-link" title="Project link" target="_blank"></a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                DidTheyHockey
-                            </h4>
-                            <p class="item-folio__cat">
-                                TypeScript, React, Node.js, Railway
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                            <p>A live streak game covering all 32 NHL teams. Reconciles the official NHL API with historical roster datasets into a validated answer key, and runs in production on Railway with a recurring user base.</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
+            <a class="pindex__row" href="https://didtheyhockey.com" target="_blank" rel="noopener" data-preview="images/portfolio/DidTheyHockey.jpg" data-aos="fade-up">
+                <img class="pindex__thumb" src="images/portfolio/DidTheyHockey.jpg" alt="DidTheyHockey preview" loading="lazy">
+                <span class="pindex__num">02</span>
+                <h3 class="pindex__title">DidTheyHockey</h3>
+                <div class="pindex__meta">
+                    <ul class="pindex__tags"><li>TypeScript</li><li>React</li><li>Node.js</li><li>Railway</li></ul>
+                    <p class="pindex__desc">A live streak game across all 32 NHL teams. Reconciles the official NHL API with historical rosters into a validated answer key. In production with a recurring user base.</p>
+                </div>
+                <span class="pindex__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+            </a>
 
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-                            
-                        <div class="item-folio__thumb">
-                            <a href="images/portfolio/hajj.webp" class="thumb-link" title="The Beetle Car" data-size="1050x700">
-                                <img src="images/portfolio/hajj.webp"
-                                     srcset="images/portfolio/hajj.webp 1x, images/portfolio/hajj.webp" alt="">
-                            </a>
-                            <a href="https://bengalinternationaltravelservice.ca/" class="item-folio__project-link" title="Project link" target="_blank"></a>
-                        </div>
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                Bengal International Travel Service
-                            </h4>
-                            <p class="item-folio__cat">
-                                Web Development, JavaScript/HTML/CSS
-                            </p>
-                        </div>
-                        <div class="item-folio__caption">
-                            <p>A website I developed for a travel agency with over 20 years of experience.</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
+            <a class="pindex__row" href="https://leafs-legend.vercel.app/" target="_blank" rel="noopener" data-preview="images/portfolio/LeafsLegend.jpg" data-aos="fade-up">
+                <img class="pindex__thumb" src="images/portfolio/LeafsLegend.jpg" alt="Leafs Legend preview" loading="lazy">
+                <span class="pindex__num">03</span>
+                <h3 class="pindex__title">Leafs Legend</h3>
+                <div class="pindex__meta">
+                    <ul class="pindex__tags"><li>TypeScript</li><li>React</li><li>Vercel</li></ul>
+                    <p class="pindex__desc">The Blue and White streak game. Shown an NHL player, guess whether they ever suited up for the Toronto Maple Leafs, with casual and hardcore modes and era filters across a pool of 4500+ players.</p>
+                </div>
+                <span class="pindex__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+            </a>
 
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-                        <div class="item-folio__thumb">
-                            <a href="images/dc4f9143-a2e2-4a97-b1c4-19b3517c2063.png" class="thumb-link" title="Shutterbug" data-size="1050x700">
-                                <img src="images/dc4f9143-a2e2-4a97-b1c4-19b3517c2063.png" 
-                                     srcset="images/dc4f9143-a2e2-4a97-b1c4-19b3517c2063.png 1x, images/dc4f9143-a2e2-4a97-b1c4-19b3517c2063.png 2x" alt="">
-                            </a>    
-                            <a href="https://github.com/EjaajAhmed/django-secure-login" class="item-folio__project-link" title="Project link" target="_blank"></a>
-                        </div>
-    
-                        <div class="item-folio__text">
-                            <h4 class="item-folio__title">
-                                SecureLogin
-                            </h4>
-                            <p class="item-folio__cat">
-                                Python, Django
-                            </p>
-                        </div>
-    
-                        <div class="item-folio__caption">
-                            <p>A Django-based web application focused on secure user authentication and a structured content feature for storing and displaying book quotes.</p>
-                        </div>
-                    </div>
-                </div> <!-- end masonry__brick -->
-                
+            <a class="pindex__row" href="https://marketplace.visualstudio.com/items?itemName=DevarshiPatel03.dsasnippets" target="_blank" rel="noopener" data-preview="images/portfolio/DSALogo.jpg" data-aos="fade-up">
+                <img class="pindex__thumb" src="images/portfolio/DSALogo.jpg" alt="DSA Code Snippets preview" loading="lazy">
+                <span class="pindex__num">04</span>
+                <h3 class="pindex__title">DSA Code Snippets</h3>
+                <div class="pindex__meta">
+                    <ul class="pindex__tags"><li>JavaScript</li><li>VS Code</li></ul>
+                    <p class="pindex__desc">A VS Code extension with over 1100 downloads that gives users more than 40 ready-made data structure and algorithm snippets.</p>
+                </div>
+                <span class="pindex__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+            </a>
 
-            </div> <!-- end masonry -->
+            <a class="pindex__row" href="https://bengalinternationaltravelservice.ca/" target="_blank" rel="noopener" data-preview="images/portfolio/hajj.webp" data-aos="fade-up">
+                <img class="pindex__thumb" src="images/portfolio/hajj.webp" alt="Bengal International Travel Service preview" loading="lazy">
+                <span class="pindex__num">05</span>
+                <h3 class="pindex__title">Bengal International Travel Service</h3>
+                <div class="pindex__meta">
+                    <ul class="pindex__tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                    <p class="pindex__desc">A website built for a travel agency with over 20 years of experience.</p>
+                </div>
+                <span class="pindex__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+            </a>
 
-        </div> <!-- end masonry-wrap -->
+            <a class="pindex__row" href="https://github.com/EjaajAhmed/django-secure-login" target="_blank" rel="noopener" data-preview="images/dc4f9143-a2e2-4a97-b1c4-19b3517c2063.png" data-aos="fade-up">
+                <img class="pindex__thumb" src="images/dc4f9143-a2e2-4a97-b1c4-19b3517c2063.png" alt="SecureLogin preview" loading="lazy">
+                <span class="pindex__num">06</span>
+                <h3 class="pindex__title">SecureLogin</h3>
+                <div class="pindex__meta">
+                    <ul class="pindex__tags"><li>Python</li><li>Django</li></ul>
+                    <p class="pindex__desc">A Django web app focused on secure user authentication, plus a structured feature for storing and displaying book quotes.</p>
+                </div>
+                <span class="pindex__arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+            </a>
 
-    </section> <!-- end s-work -->
+        </div> <!-- end pindex -->
+
+        <p class="pindex__footnote">06 projects &mdash; more on <a href="https://github.com/EjaajAhmed" target="_blank" rel="noopener">GitHub</a></p>
+
+        <div class="pindex__preview" aria-hidden="true"></div>
+
+    </section> <!-- end s-projects -->
 
 
     <!-- testimonies
@@ -599,5 +557,6 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
 
 </body>

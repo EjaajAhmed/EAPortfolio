@@ -1,0 +1,275 @@
+/* ===================================================================
+ * # project index
+ * Editorial numbered list with a cursor-following preview image.
+ * ------------------------------------------------------------------- */
+.pindex {
+  width: 89%;
+  max-width: 1400px;
+  margin: 8rem auto 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.pindex__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1.25fr) minmax(0, 1fr) 6rem;
+  grid-template-areas: "num title meta arrow";
+  align-items: center;
+  column-gap: 3.2rem;
+  padding: 4.4rem 2.4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  color: #000000;
+  text-decoration: none;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.35s ease;
+}
+
+/* dark wipe on hover */
+.pindex__row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #050505;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: -1;
+}
+
+.pindex__row:hover,
+.pindex__row:focus-visible {
+  color: #ffffff;
+  outline: none;
+}
+
+.pindex__row:hover::before,
+.pindex__row:focus-visible::before {
+  transform: scaleY(1);
+  transform-origin: top center;
+}
+
+.pindex__num {
+  grid-area: num;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  letter-spacing: 0.3rem;
+  color: #0b5e15;
+  transition: color 0.35s ease;
+}
+
+.pindex__row:hover .pindex__num,
+.pindex__row:focus-visible .pindex__num {
+  color: #7fd58b;
+}
+
+.pindex__title {
+  grid-area: title;
+  font-family: "Frank Ruhl Libre", serif;
+  font-weight: 500;
+  font-size: 4.6rem;
+  line-height: 1.1;
+  margin: 0;
+  color: inherit;
+  transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.pindex__row:hover .pindex__title,
+.pindex__row:focus-visible .pindex__title {
+  transform: translateX(1.2rem);
+}
+
+.pindex__meta {
+  grid-area: meta;
+  min-width: 0;
+}
+
+.pindex__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0 0 1.2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.pindex__tags li {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 0.7rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  opacity: 0.75;
+}
+
+.pindex__desc {
+  font-family: "Lora", serif;
+  font-size: 1.55rem;
+  line-height: 1.65;
+  margin: 0;
+  opacity: 0.85;
+}
+
+.pindex__arrow {
+  grid-area: arrow;
+  justify-self: end;
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1), background 0.35s ease, color 0.35s ease;
+}
+
+.pindex__arrow svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pindex__row:hover .pindex__arrow,
+.pindex__row:focus-visible .pindex__arrow {
+  transform: rotate(45deg);
+  background: #0b5e15;
+  border-color: #0b5e15;
+  color: #ffffff;
+}
+
+/* inline thumb: only shown on touch / narrow screens */
+.pindex__thumb {
+  grid-area: thumb;
+  display: none;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 6px;
+  margin-bottom: 1.6rem;
+}
+
+/* floating preview that follows the cursor */
+.pindex__preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36rem;
+  aspect-ratio: 3 / 2;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  background: #050505;
+  display: none;
+}
+
+.pindex__preview.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.pindex__preview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.pindex__preview img.is-active {
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pindex__preview {
+    display: block;
+  }
+}
+
+.pindex__footnote {
+  width: 89%;
+  max-width: 1400px;
+  margin: 3.2rem auto 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.45);
+  text-align: right;
+}
+
+/* ------------------------------------------------------------------- 
+ * responsive
+ * ------------------------------------------------------------------- */
+@media screen and (max-width: 1000px) {
+  .pindex__row {
+    grid-template-columns: 6rem minmax(0, 1fr) 5.2rem;
+    grid-template-areas:
+      "num title arrow"
+      "num meta  arrow";
+    row-gap: 1.6rem;
+    align-items: start;
+    padding: 3.6rem 1.6rem;
+  }
+  .pindex__title {
+    font-size: 3.8rem;
+  }
+  .pindex__arrow {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 600px), (hover: none) {
+  .pindex__row {
+    grid-template-columns: minmax(0, 1fr) 4.8rem;
+    grid-template-areas:
+      "thumb thumb"
+      "num   num"
+      "title arrow"
+      "meta  meta";
+    row-gap: 1rem;
+    padding: 3.2rem 0.8rem;
+  }
+  .pindex__thumb {
+    display: block;
+  }
+  .pindex__title {
+    font-size: 3.2rem;
+  }
+  .pindex__row:hover .pindex__title {
+    transform: none;
+  }
+  .pindex__arrow {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+  .pindex__footnote {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pindex__row::before,
+  .pindex__title,
+  .pindex__arrow,
+  .pindex__preview {
+    transition: none;
+  }
+}
