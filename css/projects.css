@@ -273,3 +273,32 @@
     transition: none;
   }
 }
+
+/* ===================================================================
+ * # founder highlights
+ * ------------------------------------------------------------------- */
+.intro-text h1 .intro-venue {
+  color: #ffffff;
+  background-image: linear-gradient(#0b5e15, #0b5e15);
+  background-repeat: no-repeat;
+  background-size: 100% 0.12em;
+  background-position: 0 92%;
+  transition: background-size 0.35s ease, color 0.35s ease;
+}
+
+.intro-text h1 .intro-venue:hover,
+.intro-text h1 .intro-venue:focus-visible {
+  color: #7fd58b;
+  background-size: 100% 0.2em;
+}
+
+.about-me__text .lead a,
+.timeline__header .item-title a {
+  color: inherit;
+  border-bottom: 2px solid #0b5e15;
+}
+
+.about-me__text .lead a:hover,
+.timeline__header .item-title a:hover {
+  color: #0b5e15;
+}
